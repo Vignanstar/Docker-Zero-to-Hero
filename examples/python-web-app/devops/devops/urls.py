@@ -15,15 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from django.http import HttpResponse
-
-# Simple home page response
-def home(request):
-    return HttpResponse("Welcome to my Django app!")
 
 urlpatterns = [
     path('demo/', include('demo.urls')),
     path('admin/', admin.site.urls),
-    path('', home),  # Add this line to handle requests to '/'
 ]
-
